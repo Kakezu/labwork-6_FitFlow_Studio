@@ -1,0 +1,7 @@
+{
+  "name": "gymApp_labwork6",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
