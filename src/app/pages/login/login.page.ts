@@ -35,8 +35,6 @@ export class LoginPage {
     return this.credentials.controls.password;
   }
 
-  async register() {}
-
   async login() {}
 
   async showAlert(header: string, message: string) {
