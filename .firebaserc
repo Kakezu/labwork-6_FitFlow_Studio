@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "labwork-6-gymapp": {
+      "hosting": {
+        "app": [
+          "labwork-6-gymapp"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "labwork-6-gymapp"
+  }
+}
