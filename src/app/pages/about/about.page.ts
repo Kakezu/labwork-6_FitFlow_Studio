@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Map, NavigationControl } from 'maplibre-gl';
+import { MessageForm } from './about.page.form';
 
 @Component({
   selector: 'app-about',
@@ -8,12 +10,16 @@ import { Map, NavigationControl } from 'maplibre-gl';
 })
 export class AboutPage implements OnInit, AfterViewInit {
 
+  form!: FormGroup;
+
   @ViewChild('map')
   private mapContainer!: ElementRef<HTMLElement>;
-
-  constructor() { }
+  public alertButtons = ['OK'];
+  
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    this.form = new MessageForm(this.formBuilder).createForm();
   }
 
   ngAfterViewInit() {
@@ -32,4 +38,12 @@ export class AboutPage implements OnInit, AfterViewInit {
     map.addControl(new NavigationControl());
   }*/
 }
+ onSubmit() {
+  if(this.form.valid) {
+    console.log("Form submitted!");
+    this.form.reset();
+  }
+ }
+
+
 }

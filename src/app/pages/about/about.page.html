@@ -72,22 +72,30 @@
   </div>
 
   <div class="hr"></div>
-
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Message us</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-item>
-        <ion-input label="Name" label-placement="floating"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-input label="Email" type="email" label-placement="floating"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-textarea label="Message" label-placement="floating" [autoGrow] = "true"></ion-textarea>
-      </ion-item>
-      <ion-button class="btn-cntr">Submit</ion-button>
-    </ion-card-content>
-  </ion-card>
+  <form [formGroup]="form">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Message us</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <ion-input label="Name" type="text" formControlName="name" label-placement="floating"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input label="Email" type="email" formControlName="email" label-placement="floating" errorText="Please provide a valid email" ngModel email></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-textarea label="Message" type="text" formControlName="message" label-placement="floating" [autoGrow] = "true"></ion-textarea>
+        </ion-item>
+        <ion-button class="btn-cntr" id="message-btn" [disabled]="!form.valid" (click)="onSubmit()">Submit</ion-button>
+        <ion-alert
+          trigger="message-btn"
+          header="Thank you!"
+          subHeader="Message received"
+          message="We will come back to you as soon as possible."
+          [buttons]="alertButtons"
+        ></ion-alert>
+      </ion-card-content>
+    </ion-card>
+  </form>
 </ion-content>
