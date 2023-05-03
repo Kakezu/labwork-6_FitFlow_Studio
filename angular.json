@@ -31,7 +31,7 @@
                 "output": "./svg"
               }
             ],
-            "styles": ["src/theme/variables.scss", "src/global.scss"],
+            "styles": ["src/theme/variables.scss", "src/global.scss", "src/app/pages/about/about.page.scss", "node_modules/maplibre-gl/dist/maplibre-gl.css"],
             "scripts": []
           },
           "configurations": {
@@ -136,7 +136,8 @@
   "cli": {
     "schematicCollections": [
       "@ionic/angular-toolkit"
-    ]
+    ],
+    "analytics": false
   },
   "schematics": {
     "@ionic/angular-toolkit:component": {
