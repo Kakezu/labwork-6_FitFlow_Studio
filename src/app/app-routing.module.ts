@@ -29,6 +29,10 @@ const routes: Routes = [
     path: 'amenities',
     loadChildren: () => import('./pages/amenities/amenities.module').then( m => m.AmenitiesPageModule)
   },
+  {
+    path: 'healthtips',
+    loadChildren: () => import('./pages/healthtips/healthtips.module').then( m => m.HealthtipsPageModule)
+  },
 
 ];
 
