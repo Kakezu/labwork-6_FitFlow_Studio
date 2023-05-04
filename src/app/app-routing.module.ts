@@ -33,6 +33,10 @@ const routes: Routes = [
     path: 'healthtips',
     loadChildren: () => import('./pages/healthtips/healthtips.module').then( m => m.HealthtipsPageModule)
   },
+  {
+    path: 'sleeptips',
+    loadChildren: () => import('./pages/sleeptips/sleeptips.module').then( m => m.SleeptipsPageModule)
+  },
 
 ];
 

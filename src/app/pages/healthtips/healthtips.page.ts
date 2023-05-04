@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-healthtips',
@@ -7,13 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HealthtipsPage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
-  myFunction() {
-    console.log("clicked")
+  navToSleep() {
+    this.router.navigate(['/sleeptips'])
   }
 
 }
