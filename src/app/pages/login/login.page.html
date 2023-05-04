@@ -3,6 +3,8 @@
   <form (ngSubmit)="login()" [formGroup]="credentials">
     <ion-item lines="none" class="ion-margin-bottom">
       <ion-input class="email-input"
+        label="Email"
+        label-placement="floating"
         type="email"
         placeholder="Email"
         formControlName="email"
@@ -12,6 +14,8 @@
 
     <ion-item lines="none" class="ion-margin-bottom">
       <ion-input
+      label="Password"
+      label-placement="floating"
       type="password"
       placeholder="Password"
       formControlName="password"

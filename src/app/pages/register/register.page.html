@@ -1,0 +1,84 @@
+<!-- I set scroll-y to prevent scrolling empty space after
+choosing any content on the card -->
+<ion-content scroll-y="false">
+  <ion-card>
+    <div class="flex">
+      <ion-back-button defaultHref="/"></ion-back-button>
+      <ion-img src="assets/icon/gymlogo_small.png"></ion-img>
+    </div>
+    <ion-card-header>
+      <ion-card-title>Register</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      Please fill out the necessary information
+      <form (ngSubmit)="register()" [formGroup]="credentials">
+        <ion-input
+        label="First Name"
+        label-placement="floating"
+        class="input-firstname"
+        type="text"
+        formControlName="firstname"
+        errorText="Please add your name"
+        ></ion-input>
+
+        <ion-input
+        label="Last Name"
+        label-placement="floating"
+        type="text"
+        formControlName="lastname"
+        errorText="Please add your name"
+        ></ion-input>
+
+        <ion-input
+        label="Username"
+        label-placement="floating"
+        type="text"
+        formControlName="username"
+        errorText="Username character limit is 15 characters"
+        ></ion-input>
+
+        <ion-input
+        label="Email"
+        label-placement="floating"
+        type="email"
+        formControlName="email"
+        errorText="Invalid email"
+        ></ion-input>
+
+        <ion-input
+        label="Password"
+        label-placement="floating"
+        type="password"
+        formControlName="password"
+        errorText="Password needs to be 6 characters"
+        ></ion-input>
+
+        <ion-input 
+        label="Password again"
+        label-placement="floating"
+        type="password"
+        formControlName="confirmpassword"
+        errorText="Needs to be same password!"
+        ></ion-input>
+
+
+        <ion-checkbox 
+        formControlName="checkbox" 
+        labelPlacement="end">
+        I agree to the terms and conditions</ion-checkbox>
+
+        <ion-button
+        type="button"
+        expand="block"
+        [disabled]="!credentials.valid"
+        (click)="register()"
+        >REGISTER</ion-button>
+      </form>
+      
+
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>

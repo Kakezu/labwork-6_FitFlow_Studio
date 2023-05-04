@@ -35,7 +35,21 @@ export class LoginPage {
     return this.credentials.controls.password;
   }
 
-  async login() {}
+  async login() {
+    const loading = await this.loadingController.create();
+    await loading.present();
+
+    const user = await this.AuthService.login(
+      this.credentials.getRawValue()
+    );
+    await loading.dismiss();
+
+    if (user) {
+      this.router.navigateByUrl('/home', {replaceUrl: true});
+    } else {
+      this.showAlert("Login failed", "Please try again!");
+    }
+  }
 
   async showAlert(header: string, message: string) {
     const alert = await this.alertController.create({
