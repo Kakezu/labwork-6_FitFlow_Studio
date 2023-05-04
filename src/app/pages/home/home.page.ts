@@ -1,4 +1,7 @@
+import { LoadingController, AlertController } from '@ionic/angular';
+import { AuthService } from 'src/app/services/auth.service';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +10,13 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(private AuthService: AuthService, 
+    private router: Router, 
+    ) {}
+
+    async logout() {
+      this.AuthService.logout();
+      this.router.navigateByUrl('/', { replaceUrl: true })
+    }
 
 }
