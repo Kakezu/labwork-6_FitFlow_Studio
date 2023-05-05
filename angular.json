@@ -34,7 +34,8 @@
 
             "styles": [
               "src/theme/variables.scss",
-              "src/global.scss"
+              "src/global.scss",
+              "node_modules/maplibre-gl/dist/maplibre-gl.css"
             ],
             "scripts": []
           },
@@ -82,9 +83,6 @@
             },
             "development": {
               "browserTarget": "app:build:development"
-            },
-            "ci": {
-              "progress": false
             }
           },
           "defaultConfiguration": "development"
