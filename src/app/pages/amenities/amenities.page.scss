@@ -1,0 +1,32 @@
+.top-bar {
+    background: #080D36;
+    padding-bottom: 90px;
+}
+h1 {
+    font-size: 36px;
+    margin-bottom: 39px;
+}
+
+ion-card {
+    margin: 0 34px 0 16px;
+    border-radius: 2px;
+    border: 1px solid rgb(218, 218, 218);
+}
+
+ion-card-content {
+    padding: 15px;
+}
+
+.flex-amenities {
+    display: flex;
+    align-items: center;
+
+}
+
+ion-icon {
+    margin-right: 20px;
+}
+
+p {
+    max-width: 400px;
+}

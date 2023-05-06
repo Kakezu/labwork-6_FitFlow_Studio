@@ -31,7 +31,12 @@
                 "output": "./svg"
               }
             ],
-            "styles": ["src/theme/variables.scss", "src/global.scss", "src/app/pages/about/about.page.scss", "node_modules/maplibre-gl/dist/maplibre-gl.css"],
+
+            "styles": [
+              "src/theme/variables.scss",
+              "src/global.scss",
+              "node_modules/maplibre-gl/dist/maplibre-gl.css"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -78,9 +83,6 @@
             },
             "development": {
               "browserTarget": "app:build:development"
-            },
-            "ci": {
-              "progress": false
             }
           },
           "defaultConfiguration": "development"
@@ -111,7 +113,10 @@
                 "output": "./svg"
               }
             ],
-            "styles": ["src/theme/variables.scss", "src/global.scss"],
+            "styles": [
+              "src/theme/variables.scss",
+              "src/global.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -128,6 +133,16 @@
               "src/**/*.ts",
               "src/**/*.html"
             ]
+          }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "app:build:production",
+            "firebaseProject": "labwork-6-gymapp",
+            "firebaseHostingSite": "labwork-6-gymapp"
           }
         }
       }

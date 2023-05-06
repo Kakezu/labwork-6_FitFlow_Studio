@@ -1,0 +1,44 @@
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-img src="assets/icon/gymlogo.png" alt="gym logo"></ion-img>
+  <form (ngSubmit)="login()" [formGroup]="credentials">
+    <ion-item lines="none" class="ion-margin-bottom">
+      <ion-input class="email-input"
+        label="Email"
+        label-placement="floating"
+        type="email"
+        placeholder="Email"
+        formControlName="email"
+        errorText="Email is invalid">
+      </ion-input>
+    </ion-item>
+
+    <ion-item lines="none" class="ion-margin-bottom">
+      <ion-input
+      label="Password"
+      label-placement="floating"
+      type="password"
+      placeholder="Password"
+      formControlName="password"
+      errorText="Password needs to be 6 characters"
+      ></ion-input>
+    </ion-item>
+
+<!-- The Login button are disabled, until credentials are correctly input -->
+
+    <ion-button class="login-button"
+      type="submit" 
+      expand="block"
+      [disabled]="!credentials.valid">
+      LOGIN
+    </ion-button>
+
+    <ion-button routerLink="/register"
+      color="light" 
+      type="button"
+      fill="outline" 
+      expand="block">
+      Register
+    </ion-button>
+
+  </form>
+</ion-content>

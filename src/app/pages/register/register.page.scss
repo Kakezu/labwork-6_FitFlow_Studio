@@ -1,0 +1,44 @@
+ion-content {
+    --ion-background-color: #2C304F;
+}
+
+.flex {
+    display: flex;
+}
+
+ion-img {
+    width: 40px;
+    margin: 15px 15px auto auto;
+}
+
+ion-card {
+    --background: white;
+    padding-bottom: 30px;
+}
+
+ion-card-title {
+    margin-top: 60px;
+    margin-left: 8px;
+    font-size: 36px;
+}
+
+ion-card-content {
+    padding: 0 30px;
+}
+
+ion-input {
+    margin-bottom: 10px;
+}
+
+.input-firstname {
+    margin-top: 20px;
+}
+
+ion-checkbox {
+    --size: 20px;
+    --checkbox-background: white
+}
+
+ion-button {
+    margin-top: 55px;
+}
