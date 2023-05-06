@@ -37,6 +37,10 @@ const routes: Routes = [
     path: 'sleeptips',
     loadChildren: () => import('./pages/sleeptips/sleeptips.module').then( m => m.SleeptipsPageModule)
   },
+  {
+    path: 'classes',
+    loadChildren: () => import('./pages/classes/classes.module').then( m => m.ClassesPageModule)
+  },
 
 ];
 

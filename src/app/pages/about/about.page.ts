@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-//import { Map, NavigationControl } from 'maplibre-gl';
+import { Map, NavigationControl } from 'maplibre-gl';
 import { MessageForm } from './about.page.form';
 import * as maplibregl from 'maplibre-gl';
 
