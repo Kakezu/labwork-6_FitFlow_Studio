@@ -8,6 +8,10 @@ const redirectLoggedInToHome = () => redirectLoggedInTo(['home']);
 const routes: Routes = [
   {
     path: '',
+    loadChildren: () => import('./pages/splashscreen/splashscreen.module').then( m => m.SplashscreenPageModule)
+  },
+  {
+    path: 'login',
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule),
     ...canActivate(redirectLoggedInToHome)
   },
@@ -25,7 +29,8 @@ const routes: Routes = [
     path: 'about',
     loadChildren: () => import('./pages/about/about.module').then( m => m.AboutPageModule)
   
-  },  {
+  },
+  {
     path: 'amenities',
     loadChildren: () => import('./pages/amenities/amenities.module').then( m => m.AmenitiesPageModule)
   },
@@ -36,7 +41,7 @@ const routes: Routes = [
   {
     path: 'sleeptips',
     loadChildren: () => import('./pages/sleeptips/sleeptips.module').then( m => m.SleeptipsPageModule)
-  },
+  }
 
 ];
 
