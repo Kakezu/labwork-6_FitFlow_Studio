@@ -25,7 +25,7 @@ export class AboutPage implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    const myAPIKey = '***'; 
+    const myAPIKey = 'xxx'; 
     const mapStyle = 'https://maps.geoapify.com/v1/styles/positron/style.json';
 
     const initialState = { lng: 25.04403, lat: 60.29530, zoom: 15 };
