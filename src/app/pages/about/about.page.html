@@ -14,7 +14,10 @@
   <div class="info-div">
     <ion-grid>
       <ion-row>
-        <ion-col>We have many different instructed classes, like yoga, bodycombat, and others!<br><br>READ MORE</ion-col>
+        <ion-col>
+          <p>We have many different instructed classes, like yoga, bodycombat, and others!</p>
+          <p id="linkToClasses" (click)="navToClasses()">READ MORE</p>
+        </ion-col>
         <ion-col>
           <ion-img src="../../assets/images/about-yoga-1.png" alt="People doing yoga"></ion-img>
         </ion-col>
@@ -27,9 +30,6 @@
   <div class="contact-div">
     <h1 id="contact-title">Contact info</h1>
     <ion-card>
-  <!--    <ion-card-header>
-        <ion-card-title>Contact info</ion-card-title>
-      </ion-card-header> -->
       <ion-card-content>
         <ion-list>
           <ion-item>
@@ -57,7 +57,7 @@
             <ion-icon name="mail-outline" slot="start"></ion-icon>
             <ion-label>
               Email
-              <p>fitlow@fitlow.fi</p>
+              <p>fitflow@fitflow.fi</p>
             </ion-label>
           </ion-item>
         </ion-list>
@@ -68,7 +68,7 @@
   <div class="hr"></div>
 
   <div class="map-container" #map>
-  <!--  <ion-img id="map-image" src="../../assets/images/map-cropped-1.png" alt="A map of Tikkurila"></ion-img> -->
+  <ion-img id="map-image" src="../../assets/images/map-cropped-1.png" alt="A map of Tikkurila"></ion-img>
   </div>
 
   <div class="hr"></div>

@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { Map, NavigationControl } from 'maplibre-gl';
 import { MessageForm } from './about.page.form';
 import * as maplibregl from 'maplibre-gl';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-about',
@@ -17,7 +18,10 @@ export class AboutPage implements OnInit, AfterViewInit {
   private mapContainer!: ElementRef<HTMLElement>;
   public alertButtons = ['OK'];
   
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private router: Router
+    ) { }
 
   ngOnInit() {
     this.form = new MessageForm(this.formBuilder).createForm();
@@ -25,7 +29,7 @@ export class AboutPage implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    const myAPIKey = 'xxx'; 
+    const myAPIKey = '**************************'; 
     const mapStyle = 'https://maps.geoapify.com/v1/styles/positron/style.json';
 
     const initialState = { lng: 25.04403, lat: 60.29530, zoom: 15 };
@@ -53,6 +57,11 @@ onSubmit() {
 
   }
 }
+
+navToClasses() {
+  this.router.navigate(['/classes'])
+}
+
 }
 
 
