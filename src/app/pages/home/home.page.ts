@@ -9,14 +9,26 @@ import { Router } from '@angular/router';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  constructor(private AuthService: AuthService, private router: Router) {}
 
-  constructor(private AuthService: AuthService, 
-    private router: Router, 
-    ) {}
+  async logout() {
+    this.AuthService.logout();
+    this.router.navigateByUrl('/', { replaceUrl: true });
+  }
 
-    async logout() {
-      this.AuthService.logout();
-      this.router.navigateByUrl('/', { replaceUrl: true })
-    }
+  // getUsername() {
+  //  const user = this.AuthService.currentUser;
+  //  if (user) {
+  //    return ', ' + user.displayName + '!';
+  //  } else {
+  //     return '!';
+  //  }
+  //}
 
+  goToClasses() {
+    this.router.navigateByUrl('/classes', { replaceUrl: true });
+  }
+  goToAmenities() {
+    this.router.navigateByUrl('/amenities', { replaceUrl: true });
+  }
 }
