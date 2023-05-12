@@ -1,9 +1,22 @@
-<!-- <ion-header [translucent]="true"> -->
+
+<!-- header + side menu alkaa tästä -->
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title></ion-title>
+    <ion-buttons slot="end" >
+      <img src="assets\icon\gymlogo_small.png" id="toolbarLogoSmall">
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<!-- header + side menu loppuu tähän -->
+
 <ion-content>
   <div class="title-div">
     <ion-card class="title-card" style="background-image: url('../../assets/images/about-bg-cropped-1.png');">
       <ion-card-header>
-        <ion-card-title>About us</ion-card-title>
       </ion-card-header>
       <ion-card-content>We are a gym dedicated to making<br>you feel better!</ion-card-content>
     </ion-card>
@@ -99,3 +112,4 @@
     </ion-card>
   </form>
 </ion-content>
+

@@ -24,3 +24,31 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+
+//Saaran tekemiä muotoiluja:
+body { //linkitä tämä index.html tiedostoon: <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    font-family: 'Montserrat', sans-serif;
+  }
+
+p h1 h2 h3 {font-family: 'Montserrat', sans-serif;
+
+}
+
+ion-toolbar {
+  --background: #2C304F;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ion-menu-button {--color: white;}
+
+#toolbarLogoSmall{
+  margin-right: 16px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
