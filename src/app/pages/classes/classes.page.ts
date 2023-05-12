@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IonRouterOutlet } from '@ionic/angular';
 
 @Component({
   selector: 'app-classes',
@@ -11,6 +12,12 @@ export class ClassesPage implements OnInit {
   reserved = false;
   public alertButtons = ['OK'];
   progress = 0.8;
+
+
+  // Added prevention of sliding to previous page
+  constructor(private routerOutlet: IonRouterOutlet) {
+      this.routerOutlet.swipeGesture = false;
+    }
 
   reserve() {
     if (this.counter < 25) {

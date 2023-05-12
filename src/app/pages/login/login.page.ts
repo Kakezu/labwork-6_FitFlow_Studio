@@ -1,8 +1,8 @@
 import { AuthService } from './../../services/auth.service';
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AlertController, LoadingController } from '@ionic/angular';
+import { AlertController, LoadingController, MenuController, IonRouterOutlet } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -17,15 +17,22 @@ export class LoginPage {
     password: ['', [Validators.required, Validators.minLength(6)]],
   })
 
-  // Made components to get the login function working through firebase
+  // Made components to get the login function working through firebase and to prevent Login from swiping to splashscreen
   constructor(
     private fb: FormBuilder, 
     private loadingController: LoadingController, 
     private alertController: AlertController, 
     private AuthService: AuthService, 
-    private router: Router
-  ) { }
+    private router: Router,
+    private menuCtrl: MenuController,
+    private routerOutlet: IonRouterOutlet
+  ) {
+    this.routerOutlet.swipeGesture = false;
+   }
 
+  ionViewWillEnter(){
+   this.menuCtrl.enable(false);
+  }
   // Easy access for form fields
   get email() {
     return this.credentials.controls.email;
