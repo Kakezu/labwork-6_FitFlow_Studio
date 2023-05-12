@@ -1,0 +1,32 @@
+.top-bar {
+    background: #080D36;
+    padding-bottom: 90px;
+}
+
+h1 {
+    font-size: 36px;
+ 
+}
+
+.hr {
+    border-bottom: 1px solid gainsboro;
+    margin: 50px 0px 10px 20px;
+    width: 90%;
+}
+
+
+ion-card {
+    margin: 0;
+}
+.card-tips {
+    display: grid;
+    grid-template-columns: repeat(2, 185px);
+    gap: 10px;
+    margin: 0 15px 0 15px;
+}
+
+p {
+    max-width: 400px;
+}
+
+  

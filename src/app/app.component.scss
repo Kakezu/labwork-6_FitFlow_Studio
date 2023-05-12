@@ -1,0 +1,46 @@
+// saaran tekemät muotoilut
+
+ion-toolbar {
+    --background: #2C304F;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  ion-menu-button {--color: white;}
+  
+  ion-title {
+    --color: white;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  ion-menu {
+    --ion-background-color: #2C304F;
+  }
+  #menuItems ion-label,
+  #menuItems ion-icon,
+  #menuItems ion-item,
+  #menuItems ion-title {
+    color: #ffffff;
+  }
+  #menuItems ion-item:hover {
+    --background: #4F40C1;
+    color: #2C304F;
+  }
+
+  #menuItems ion-icon{
+    margin-right: 12px
+  }
+  .with-divider::before,
+  .with-divider::after {
+    content: "";
+    display: block;
+    height: 1px;
+    background-color: #ffffff;
+    margin: 12px 16px;
+  }
+  
+body { //linkitä tämä index.html tiedostoon: <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    font-family: 'Montserrat', sans-serif;
+  }

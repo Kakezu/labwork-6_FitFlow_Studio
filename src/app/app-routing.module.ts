@@ -46,6 +46,24 @@ const routes: Routes = [
     path: 'classes',
     loadChildren: () => import('./pages/classes/classes.module').then( m => m.ClassesPageModule)
   },
+  {
+    path: 'not-found',
+    loadChildren: () => import('./not-found/not-found.module').then( m => m.NotFoundPageModule)
+  },
+  {
+    path: 'gym-equipments',
+    loadChildren: () => import('./pages/gym-equipments/gym-equipments.module').then( m => m.GymEquipmentsPageModule)
+  },
+
+//-------------------------------------------------------------------------------------------------------
+// Jätä reitti ** viimeiseksi, muuten navigoi aina not-found -sivulle.
+//-------------------------------------------------------------------------------------------------------
+  {
+    path: '**',
+    loadChildren: () => import('./not-found/not-found.module').then(m => m.NotFoundPageModule)
+  },
+  
+  
 
 ];
 
@@ -55,5 +73,5 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-
+ 
 export class AppRoutingModule { }
