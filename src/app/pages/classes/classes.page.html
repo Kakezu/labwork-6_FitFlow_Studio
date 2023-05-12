@@ -1,0 +1,128 @@
+<!--<ion-header [translucent]="true"> -->
+  <ion-header class="ion-padding-start">
+    <h1>Book a class</h1>
+  </ion-header>
+
+<br>
+<ion-content>
+  <div class="datepicker">
+    <ion-item slot="start" lines="none">
+      <ion-datetime-button id="datebutton" datetime="datetime"></ion-datetime-button>
+
+      <ion-modal [keepContentsMounted]="true">
+        <ng-template>
+        <ion-datetime presentation="date" id="datetime"></ion-datetime>
+        </ng-template>
+      </ion-modal>
+    </ion-item>
+  </div>
+
+  <div>
+    <ion-card>
+      <ion-card-header>
+        <ion-item lines="none">
+          <ion-card-subtitle>15.00-15.30</ion-card-subtitle>
+          <ion-badge slot="end" color="white">{{ counter }}/25</ion-badge>
+        </ion-item>
+      </ion-card-header>
+      <ion-card-content>
+          <ion-item lines="none">
+            <ion-icon name="body-outline" slot="start" size="large"></ion-icon>
+            <ion-label>Bodycombat</ion-label>
+            <ion-button [disabled]="reserved" slot="end" (click)="reserve()" id="res-btn">
+              <ng-container *ngIf="!reserved; else reservedState">Reserve</ng-container>
+              <ng-template #reservedState>Reserved</ng-template>
+            </ion-button>
+            <ion-alert
+          trigger="res-btn"
+          header="Thank you!"
+          subHeader="Reservation confirmed"
+          message="See you in class!"
+          [buttons]="alertButtons"
+        ></ion-alert>
+        </ion-item>
+        <ion-progress-bar *ngIf="progress" [value]="progress" color="primary"></ion-progress-bar>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-header>
+        <ion-item lines="none">
+          <ion-card-subtitle>15.00-15.30</ion-card-subtitle>
+          <ion-badge slot="end" color="white">15/25</ion-badge>
+        </ion-item> 
+      </ion-card-header>
+      <ion-card-content>
+          <ion-item lines="none">
+            <ion-icon name="walk-outline" slot="start" size="large"></ion-icon>
+            <ion-label>Zumba</ion-label>
+            <ion-button slot="end">Reserve</ion-button>
+        </ion-item>
+        <ion-progress-bar [value]=0.6 color="primary"></ion-progress-bar>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-header>
+        <ion-item lines="none">
+          <ion-card-subtitle>15.00-15.30</ion-card-subtitle>
+          <ion-badge slot="end" color="white">23/25</ion-badge>
+        </ion-item> 
+      </ion-card-header>
+      <ion-card-content>
+          <ion-item lines="none">
+            <ion-icon name="accessibility-outline" slot="start" size="large"></ion-icon>
+            <ion-label>Yoga</ion-label>
+            <ion-button slot="end">Reserve</ion-button>
+        </ion-item>
+        <ion-progress-bar [value]=0.92 color="primary"></ion-progress-bar>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-header>
+        <ion-item lines="none">
+          <ion-card-subtitle>15.00-15.30</ion-card-subtitle>
+          <ion-badge slot="end" color="white">21/25</ion-badge>
+        </ion-item> 
+      </ion-card-header>
+      <ion-card-content>
+          <ion-item lines="none">
+            <ion-icon name="people-outline" slot="start" size="large"></ion-icon>
+            <ion-label>Group exercise A</ion-label>
+            <ion-button slot="end">Reserve</ion-button>
+        </ion-item>
+        <ion-progress-bar [value]=0.84 color="primary"></ion-progress-bar>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-header>
+        <ion-item lines="none">
+          <ion-card-subtitle>15.00-15.30</ion-card-subtitle>
+          <ion-badge slot="end" color="white">10/25</ion-badge>
+        </ion-item> 
+      </ion-card-header>
+      <ion-card-content>
+          <ion-item lines="none">
+            <ion-icon name="people-outline" slot="start" size="large"></ion-icon>
+            <ion-label>Group exercise B</ion-label>
+            <ion-button slot="end">Reserve</ion-button>
+        </ion-item>
+        <ion-progress-bar [value]=0.4 color="primary"></ion-progress-bar>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-header>
+        <ion-item lines="none">
+          <ion-card-subtitle>15.00-15.30</ion-card-subtitle>
+          <ion-badge slot="end" color="white">12/25</ion-badge>
+        </ion-item> 
+      </ion-card-header>
+      <ion-card-content>
+          <ion-item lines="none">
+            <ion-icon name="people-outline" slot="start" size="large"></ion-icon>
+            <ion-label>Group exercise C</ion-label>
+            <ion-button slot="end">Reserve</ion-button>
+        </ion-item>
+        <ion-progress-bar [value]=0.48 color="primary"></ion-progress-bar>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

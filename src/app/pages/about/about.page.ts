@@ -1,7 +1,9 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-//import { Map, NavigationControl } from 'maplibre-gl';
+import { Map, NavigationControl } from 'maplibre-gl';
 import { MessageForm } from './about.page.form';
+import * as maplibregl from 'maplibre-gl';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-about',
@@ -16,14 +18,18 @@ export class AboutPage implements OnInit, AfterViewInit {
   private mapContainer!: ElementRef<HTMLElement>;
   public alertButtons = ['OK'];
   
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private router: Router
+    ) { }
 
   ngOnInit() {
     this.form = new MessageForm(this.formBuilder).createForm();
+    
   }
 
   ngAfterViewInit() {
-    /*const myAPIKey = '***'; 
+    const myAPIKey = '**************************'; 
     const mapStyle = 'https://maps.geoapify.com/v1/styles/positron/style.json';
 
     const initialState = { lng: 25.04403, lat: 60.29530, zoom: 15 };
@@ -33,17 +39,29 @@ export class AboutPage implements OnInit, AfterViewInit {
       style: `${mapStyle}?apiKey=${myAPIKey}`,
       center: [initialState.lng, initialState.lat],
       zoom: initialState.zoom
+      
     });
 
+    
+  var marker = new maplibregl.Marker()
+  .setLngLat([25.04403, 60.29530])
+  .addTo(map);
+
     map.addControl(new NavigationControl());
-  }*/
-}
- onSubmit() {
+  }
+
+onSubmit() {
   if(this.form.valid) {
     console.log("Form submitted!");
     this.form.reset();
-  }
- }
 
+  }
+}
+
+navToClasses() {
+  this.router.navigate(['/classes'])
+}
 
 }
+
+
