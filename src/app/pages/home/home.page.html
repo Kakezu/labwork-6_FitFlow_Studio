@@ -9,5 +9,50 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content>
+  <div class="title-div">
+    <ion-card
+      class="title-card"
+      style="background-image: url('../../assets/images/home.png')"
+    >
+      <ion-card-header>
+        <ion-card-title> Hello, *NIMI TÄHÄN*!</ion-card-title>
+      </ion-card-header>
+    </ion-card>
+  </div>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>New Instructed Classes</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <img
+        alt="Row of dumbbells"
+        src="../../assets/images/home-new-classes.png"
+      />
+      Check out our diverse selection of instructed classes!
+      <ion-button type="button" expand="block" (click)="goToClasses"
+        >BOOK A CLASS</ion-button
+      >
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Childcare Services </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <img
+        alt="Row of dumbbells"
+        src="../../assets/images/home-childcare-services.png"
+      />
+      Need a child while you’re going to gym? No problem! We have a playful room
+      with a certified nurse to oversee the children.
+      <ion-button type="button" expand="block" (click)="goToAmenities()"
+        >READ MORE</ion-button
+      >
+    </ion-card-content>
+  </ion-card>
 </ion-content>

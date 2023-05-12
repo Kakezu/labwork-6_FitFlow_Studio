@@ -1,0 +1,22 @@
+ion-content {
+    --ion-background-color: #2C304F
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 90%;
+}
+
+ion-img {
+    width: 150px;
+}
+
+ion-spinner {
+    margin-top: 100px;
+    width: 3em;
+    height: 3em;
+}
+
