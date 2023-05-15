@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { MenuController } from '@ionic/angular';
+import { IonRouterOutlet, MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-splashscreen',
@@ -11,11 +11,10 @@ export class SplashscreenPage implements OnInit {
 
   constructor(
     private router: Router,
-    private menuCtrl: MenuController) { }
-
-  ionViewWillEnter(){
-    this.menuCtrl.enable(false);
-  }
+    private routerOutlet: IonRouterOutlet
+    ) {
+      this.routerOutlet.swipeGesture = false;
+     }
 
   showHomePageForFiveSeconds() {
     setTimeout(() => {

@@ -27,32 +27,39 @@ const routes: Routes = [
 
   {
     path: 'about',
-    loadChildren: () => import('./pages/about/about.module').then( m => m.AboutPageModule)
+    loadChildren: () => import('./pages/about/about.module').then( m => m.AboutPageModule),
+    ...canActivate(redirectUnauthorizedToLogin)
   
   },
   {
     path: 'amenities',
-    loadChildren: () => import('./pages/amenities/amenities.module').then( m => m.AmenitiesPageModule)
+    loadChildren: () => import('./pages/amenities/amenities.module').then( m => m.AmenitiesPageModule),
+    ...canActivate(redirectUnauthorizedToLogin)
   },
   {
     path: 'healthtips',
-    loadChildren: () => import('./pages/healthtips/healthtips.module').then( m => m.HealthtipsPageModule)
+    loadChildren: () => import('./pages/healthtips/healthtips.module').then( m => m.HealthtipsPageModule),
+    ...canActivate(redirectUnauthorizedToLogin)
   },
   {
     path: 'sleeptips',
-    loadChildren: () => import('./pages/sleeptips/sleeptips.module').then( m => m.SleeptipsPageModule)
+    loadChildren: () => import('./pages/sleeptips/sleeptips.module').then( m => m.SleeptipsPageModule),
+    ...canActivate(redirectUnauthorizedToLogin)
   },
   {
     path: 'classes',
-    loadChildren: () => import('./pages/classes/classes.module').then( m => m.ClassesPageModule)
+    loadChildren: () => import('./pages/classes/classes.module').then( m => m.ClassesPageModule),
+    ...canActivate(redirectUnauthorizedToLogin)
   },
   {
     path: 'not-found',
-    loadChildren: () => import('./not-found/not-found.module').then( m => m.NotFoundPageModule)
+    loadChildren: () => import('./not-found/not-found.module').then( m => m.NotFoundPageModule),
+    ...canActivate(redirectUnauthorizedToLogin)
   },
   {
     path: 'gym-equipments',
-    loadChildren: () => import('./pages/gym-equipments/gym-equipments.module').then( m => m.GymEquipmentsPageModule)
+    loadChildren: () => import('./pages/gym-equipments/gym-equipments.module').then( m => m.GymEquipmentsPageModule),
+    ...canActivate(redirectUnauthorizedToLogin)
   },
 
 //-------------------------------------------------------------------------------------------------------
