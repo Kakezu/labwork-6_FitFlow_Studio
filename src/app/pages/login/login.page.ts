@@ -23,16 +23,9 @@ export class LoginPage {
     private loadingController: LoadingController, 
     private alertController: AlertController, 
     private AuthService: AuthService, 
-    private router: Router,
-    private menuCtrl: MenuController,
-    private routerOutlet: IonRouterOutlet
+    private router: Router
   ) {
-    this.routerOutlet.swipeGesture = false;
    }
-
-  ionViewWillEnter(){
-   this.menuCtrl.enable(false);
-  }
   // Easy access for form fields
   get email() {
     return this.credentials.controls.email;
